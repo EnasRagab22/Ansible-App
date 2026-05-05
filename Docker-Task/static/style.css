@@ -1,0 +1,57 @@
+.Task{
+    height: 700px;
+    width: 500px;
+    color: rgb(136, 28, 186);
+    border: 2px solid rgb(53, 1, 83);
+    padding-top: 30px;
+    padding-left: 80px;
+    margin: auto;
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    background-image: linear-gradient(to bottom,rgba(202, 123, 252, 0.8),rgb(240, 216, 240));
+
+}
+p{
+    font-size: 25px;
+    color: darkmagenta;
+}
+.title{
+   font-size: 50px;
+   color: rgb(170, 15, 243);
+   text-align: center;
+
+}
+a{
+    text-decoration: none;
+    color: indigo;
+    font-size: 20px;
+    text-align: center;
+
+}
+a:hover{
+    color: rgb(248, 120, 188);
+}
+
+.text{
+  border-radius:15px 50px ;  
+  background-color: rgb(231, 186, 253);
+  padding: 20px;
+  width: 400px;
+  height: 15px;
+}
+.add-btn{
+   background-color: rgb(163, 76, 244);
+   width: 400px; 
+   height: 35px;
+   font-size: 25px;
+   display: inline-block;
+   padding: 20px;
+   border-radius: 15px 50px;
+
+
+}
+.add-btn:hover{
+    transform: scale(1.1);
+    background-color: rgb(182, 244, 245);
+}

@@ -1,0 +1,33 @@
+- name: "Run Containers with ansible-playbook"
+  hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Stop Mysql
+      command: docker container stop mysql57
+      ignore_errors: yes
+
+    - name: Stop phpmyadmin
+      command: docker container stop phpmyadmin
+      ignore_errors: yes
+
+    - name: Remove Network
+      command: docker network rm mynet1
+      ignore_errors: yes
+
+    - name: Remove  MYSQL
+      command: docker rm mysql57
+      ignore_errors: yes
+
+    - name: Remove  phpmyadmin
+      command: docker rm phpmyadmin
+      ignore_errors: yes
+
+    - name: Create Network
+      command: docker network create mynet1
+
+    - name: Run MySQL57
+      command: docker container run -d --name mysql57 --network mynet1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=enas -e MYSQL_PASSWORD=enas226 -e MYSQL_DATABASE=company -v my>
+
+    - name: Run phpmyadmin
+      command: docker run -d --network mynet1 --name phpmyadmin -p 8081:80 -e PMA_HOST=mysql57 -e PMA_PORT=3306 phpmyadmin
